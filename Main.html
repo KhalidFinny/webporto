@@ -7,7 +7,50 @@
     <link rel="stylesheet" href="mediaqueries.css">
 </head>
 <body>
-<h2>Risang's Portofolio</h2>
+<nav id="desktop-nav">
+    <div class="logo"> Risang </div>
+    <div>
+        <ul class="nav-links">
+            <li><a href="#About">About Me</a></li>
+            <li><a href="#My Work" onclick="location.href = '/work.html' ">My Work</a></li>
+        </ul>
+    </div>
+</nav>
+<nav id="hamburger-nav">
+    <div class="logo"> Risang </div>
+    <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu-Links">
+            <li><a href="#About" onclick="toggleMenu()">About Me</a></li>
+            <li><a href="#My Work" onclick="toggleMenu()">My Work</a></li>
+
+        </div>
+    </div>
+</nav>
+<section id="profile">
+    <div class="sectionpic">
+        <img src="./Assets/Ellipse 1.png" alt="Risang">
+    </div>
+    <div class="sectiontext">
+        <p class="sectiontextp1">Hello, My name is</p>
+        <h1 class="tittle">Risang Sasotyaningtyas</h1>
+        <p class="sectiontextp2">I am a Painter</p>
+        <div class="btn-container">
+            <button class="btn btn-color-2" onclick="window.open('https://drive.google.com/drive/folders/19-1dhQS5kUMsuiXobpOvdpx98IPYo5Xa?usp=sharing')">Check out my Google Drive</button>
+            <button class="btn btn-color-1" onclick="window.open('https://wa.me/+6285704028141')">Contact me</button>
+        </div>
+    </div>
+    <div id="social-container">
+        <img src="./Assets/linkedin-app-icon.png" alt="my linkedin" class="icon" onclick="window.open('https://linkedin.com/')">
+        <img src="./Assets/ig-instagram-icon.png" alt="my instagram" class="icon" onclick="window.open('https://www.instagram.com/riiisanggg?igsh=aGFreGF6enYyNWI0')">
+    </div>
+</section>
+
+
 <script src="script.js"></script>
 </body>
 </html>
