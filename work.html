@@ -3,10 +3,43 @@
     <head>
         <meta charset="UTF-8">
         <title>Risang's Portofolio</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="worksyle.css">
         <link rel="stylesheet" href="mediaqueries.css">
     </head>
 <body>
+    <nav id="desktop-nav">
+        <div class="logo" onclick="location.href = '/Main.html' "> Risang </div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#About">About Me</a></li>
+                <li><a href="#My Work" onclick="location.href = '/work.html' ">My Work</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo"> Risang </div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-Links">
+                <li><a href="#About" onclick="toggleMenu()">About Me</a></li>
+                <li><a href="#My Work" onclick="toggleMenu()">My Work</a></li>
+            </div>
+        </div>
+    </nav>
+    <section id="porto">
+        <div class="portopics">
+            <img src="./Assets/gambar 1-1.png" alt="Lukisan 1">
+        </div>
+        <div class="tittle">
+            <p class="tittle-1"> Gambar 1
+                
+            </p>
+        </div>
+    </section>
     
 </body>
 </html>
