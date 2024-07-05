@@ -41,4 +41,21 @@
         flex-direction: column;
         gap: 1rem;
     }
+    #articles {
+        flex-direction: column;
+        text-align: center;
+    }
+    .article-text {
+        text-align: center;
+    }
+    .article {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        
+    }
+    .article-image1, .article-image2, .article-image3, .article-image4 {
+        width: 350px;
+        height: 350px;
+    }
 }

@@ -140,47 +140,60 @@ a:hover {
     -o-transform: rotate(-45deg) translate(10px, -10px);
 }
 
-
-section {
-    padding-top: 10vh;
-    margin: 0 10rem;
-    box-sizing: border-box;
-}
-
-#porto {
+#articles {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
     gap: 2rem;
-    height: 80vh;
+    padding: 10rem;
 }
 
-.portopics {
-    flex: 1;
-    display: flex;
-    justify-content: left;
+.article {
     align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: #FEDCDC;
+    padding: 2rem;
+    border-radius: auto;
+    box-shadow: 0px 0px 10px #CF7878;
+    
 }
 
-.portopics img {
-    max-width: 40%;
-    height: auto;
-    border: 5px solid #CF7878;
-    border-radius: 10px;
+.article-image1, .article-image2, .article-image3, .article-image4{
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+
 }
 
-.portotext {
-    flex: 1;
-    text-align: left;
+.article-text {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 2rem;
 }
 
-.title {
-    text-align: center;
+.article-text h2 {
     color: #854a4a;
+    font-weight: 700;
+    font-size: 1.5rem;
 }
 
-.tittle-1{
-    font-weight: 700;
-    font-size: 3rem;
+.article-text p {
+    color: #555;
+    font-size: 20px;
+    margin: 1rem 0;
+}
+
+.article-text a {
     color: #CF7878;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.article-text a:hover {
+    color: #854a4a;
 }

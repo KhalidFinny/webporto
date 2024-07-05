@@ -288,8 +288,8 @@ section {
     gap: 2rem;
     height: auto; 
     box-sizing: border-box;
-    margin-top: 10vh; 
-    margin-bottom: 10vh;
+    margin-top: 30vh; 
+    margin-bottom: 20vh;
 }
 
 .section-container {
@@ -315,6 +315,7 @@ section {
     max-width: 100%;
     height: auto;
     display: block;
+    
 }
 
 .sectiontextp1-2{
