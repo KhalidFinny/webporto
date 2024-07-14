@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Risang's Portofolio</title>
+    <title>Risang's Portfolio</title>
     <link rel="stylesheet" href="worksyle.css">
     <link rel="stylesheet" href="mediaqueries.css">
 </head>
@@ -24,9 +24,11 @@
                 <span></span>
                 <span></span>
             </div>
-            <div class="menu-Links">
-                <li><a href="#About" onclick="toggleMenu()">About Me</a></li>
-                <li><a href="#My Work" onclick="toggleMenu()">My Work</a></li>
+            <div class="menu-links">
+                <ul>
+                    <li><a href="#About" onclick="toggleMenu()">About Me</a></li>
+                    <li><a href="#My Work" onclick="toggleMenu()">My Work</a></li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -102,5 +104,11 @@
             </div>
         </div>
     </section>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.hamburger-icon').classList.toggle('open');
+            document.querySelector('.menu-links').classList.toggle('open');
+        }
+    </script>
 </body>
 </html>

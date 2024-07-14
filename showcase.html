@@ -44,7 +44,9 @@
                     <strong>Deskripsi Karya:</strong> <span id="painting-details"></span>
                 </div>
             </div>
-            <a href="/work.html" class="btn btn-color-1">My Work</a>
+            <div class="btn-container">
+                <button class="btn btn-color-1" onclick="href='./work.html'">My Work</button>
+            </div>
         </div>
     </section>
     <script>
@@ -140,6 +142,10 @@
         }
 
         window.onload = loadPainting;
+        function toggleMenu() {
+            document.querySelector('.hamburger-icon').classList.toggle('open');
+            document.querySelector('.menu-links').classList.toggle('open');
+        }
     </script>
 </body>
 </html>

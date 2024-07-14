@@ -1,26 +1,21 @@
 @media screen and (max-width: 1200px) {
-    /* Media queries for screens up to 1200px width */
-@media screen and (max-width: 1200px) {
-    /* Hide desktop navigation */
+ 
     #desktop-nav {
         display: none;
     }
 
-    /* Display hamburger menu */
     #hamburger-nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
         background-color: #FEDCDC;
-        padding: 10px 20px; /* Adjust padding as needed */
+        padding: 10px 20px; 
     }
 
-    /* Hide desktop navigation links */
     .nav-links {
         display: none;
     }
 
-    /* Hamburger menu icon styles */
     .hamburger-menu {
         display: flex;
         align-items: center;
@@ -46,12 +41,19 @@
         background-color: #CF7878;
         margin: 4px 0;
         transition: transform 0.3s ease-in-out;
-    }
+        -webkit-transition: transform 0.3s ease-in-out;
+        -moz-transition: transform 0.3s ease-in-out;
+        -ms-transition: transform 0.3s ease-in-out;
+        -o-transition: transform 0.3s ease-in-out;
+}
 
-    /* Hamburger menu icon animation */
     .hamburger-icon.open span:first-child {
         transform: rotate(45deg) translate(5px, 5px);
-    }
+        -webkit-transform: rotate(45deg) translate(5px, 5px);
+        -moz-transform: rotate(45deg) translate(5px, 5px);
+        -ms-transform: rotate(45deg) translate(5px, 5px);
+        -o-transform: rotate(45deg) translate(5px, 5px);
+}
 
     .hamburger-icon.open span:nth-child(2) {
         opacity: 0;
@@ -59,35 +61,39 @@
 
     .hamburger-icon.open span:last-child {
         transform: rotate(-45deg) translate(5px, -5px);
-    }
+        -webkit-transform: rotate(-45deg) translate(5px, -5px);
+        -moz-transform: rotate(-45deg) translate(5px, -5px);
+        -ms-transform: rotate(-45deg) translate(5px, -5px);
+        -o-transform: rotate(-45deg) translate(5px, -5px);
+}
 
-    /* Hamburger menu links container */
     .menu-links {
         position: absolute;
-        top: 60px; /* Adjust top position to align with hamburger icon */
-        right: 20px; /* Adjust right position as needed */
+        top: 60px;
         background-color: #FEDCDC;
         width: fit-content;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease-in-out;
-    }
+        -webkit-transition: max-height 0.3s ease-in-out;
+        -moz-transition: max-height 0.3s ease-in-out;
+        -ms-transition: max-height 0.3s ease-in-out;
+        -o-transition: max-height 0.3s ease-in-out;
+}
 
-    /* Display menu links when menu is open */
     .menu-links.open {
-        max-height: 200px; /* Adjust max-height to show menu items */
+        max-height: 200px; 
     }
-
-    /* Menu links list styles */
-    .menu-Links {
+    
+    .menu-links ul {
         list-style: none;
         padding: 0;
         margin: 0;
         text-align: center;
     }
 
-    .menu-Links li {
-        margin-bottom: 10px; /* Adjust margin between menu items */
+    .menu-links ul li {
+        margin-bottom: 10px; 
     }
 
     .menu-Links a {
@@ -101,7 +107,6 @@
     .menu-Links a:hover {
         color: #854a4a;
     }
-}
 
     .sectionpic {
         width: auto;
@@ -170,16 +175,32 @@
         width: 350px;
         height: 350px;
     }
-    .article-textshow {
-        width: 150%; 
-        padding-left: 1rem; 
+    #showcase {
+        flex-direction: column;
+        padding: 5rem;
     }
 
-    .description-section {
-        font-size: 1.5rem; 
+    .article-textshow {
+        width: 100%;
     }
+
+    #showcase-img {
+        width: auto;
+        height: 800px;
+    }
+
+    #showcase-title {
+        font-size: 2.5rem;
+    }
+ #showcase {
+        padding: 2rem;
+    }
+
+    #showcase-title {
+        font-size: 2rem;
+    }
+
     .btn {
-        width: 80%; 
-        margin: 0 auto; 
+        width: 100%;
     }
 }

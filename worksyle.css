@@ -104,11 +104,15 @@ a:hover {
     max-height: 300px;
 }
 
-.menu-Links {
+.menu-links ul {
     list-style: none;
 }
 
-.menu-Links a {
+.menu-links ul li {
+    list-style: none;
+}
+
+.menu-links ul li a {
     display: block;
     padding: 10px 20px;
     text-align: center;
@@ -119,16 +123,8 @@ a:hover {
     white-space: nowrap;
 }
 
-.menu-Links li {
-    list-style: none;
-}
-
 .hamburger-icon.open span:first-child {
-    transform: rotate(45deg) translate(7.5px, 7.5px);
-    -webkit-transform: rotate(45deg) translate(7.5px, 7.5px);
-    -moz-transform: rotate(45deg) translate(7.5px, 7.5px);
-    -ms-transform: rotate(45deg) translate(7.5px, 7.5px);
-    -o-transform: rotate(45deg) translate(7.5px, 7.5px);
+    transform: rotate(45deg) translate(5px, 5px);
 }
 
 .hamburger-icon.open span:nth-child(2) {
@@ -136,11 +132,7 @@ a:hover {
 }
 
 .hamburger-icon.open span:last-child {
-    transform: rotate(-45deg) translate(10px, -10px);
-    -webkit-transform: rotate(-45deg) translate(10px, -10px);
-    -moz-transform: rotate(-45deg) translate(10px, -10px);
-    -ms-transform: rotate(-45deg) translate(10px, -10px);
-    -o-transform: rotate(-45deg) translate(10px, -10px);
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 #articles {
@@ -151,29 +143,37 @@ a:hover {
 }
 
 .article {
-    align-items: center;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: center; 
     background-color: #FEDCDC;
     padding: 2rem;
     border-radius: 5rem;
     box-shadow: 0px 0px 10px #CF7878;
+    -webkit-border-radius: 5rem;
+    -moz-border-radius: 5rem;
+    -ms-border-radius: 5rem;
+    -o-border-radius: 5rem;
 }
 
 .article-image1, .article-image2, .article-image3, .article-image6, .article-image7 {
     display: flex;
     justify-content: center;
     width: auto;
-    height: 300px;
+    height: 400px;
     overflow: hidden;
     border-radius: 10%;
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
+    -ms-border-radius: 10%;
+    -o-border-radius: 10%;
 }
 
 .article-image4, .article-image5 {
     display: flex;
     justify-content: center;
-    width: auto;
-    height: 400px;
+    width: 300px; 
+    height: 400px; 
     overflow: hidden;
     border-radius: 5%;
 }
@@ -189,12 +189,12 @@ a:hover {
 .article-text h2 {
     color: #854a4a;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 3rem;
 }
 
 .article-text p {
     color: #555;
-    font-size: 20px;
+    font-size: 25px;
     margin: 1rem 0;
 }
 
@@ -202,7 +202,7 @@ a:hover {
     color: #CF7878;
     text-decoration: none;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .article-text a:hover {
