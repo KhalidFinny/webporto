@@ -1,15 +1,120 @@
 @media screen and (max-width: 1200px) {
-    #desktop-nav{
+    /* Media queries for screens up to 1200px width */
+@media screen and (max-width: 1200px) {
+    /* Hide desktop navigation */
+    #desktop-nav {
         display: none;
     }
-    #hamburger-nav{
+
+    /* Display hamburger menu */
+    #hamburger-nav {
         display: flex;
-    }
-    .sectionpic {
-        width: 350px;
-        height: 350px;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #FEDCDC;
+        padding: 10px 20px; /* Adjust padding as needed */
     }
 
+    /* Hide desktop navigation links */
+    .nav-links {
+        display: none;
+    }
+
+    /* Hamburger menu icon styles */
+    .hamburger-menu {
+        display: flex;
+        align-items: center;
+    }
+
+    .hamburger-icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+        padding: 5px;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    .hamburger-icon span {
+        display: block;
+        height: 2px;
+        width: 25px;
+        background-color: #CF7878;
+        margin: 4px 0;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Hamburger menu icon animation */
+    .hamburger-icon.open span:first-child {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger-icon.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-icon.open span:last-child {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Hamburger menu links container */
+    .menu-links {
+        position: absolute;
+        top: 60px; /* Adjust top position to align with hamburger icon */
+        right: 20px; /* Adjust right position as needed */
+        background-color: #FEDCDC;
+        width: fit-content;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    /* Display menu links when menu is open */
+    .menu-links.open {
+        max-height: 200px; /* Adjust max-height to show menu items */
+    }
+
+    /* Menu links list styles */
+    .menu-Links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    .menu-Links li {
+        margin-bottom: 10px; /* Adjust margin between menu items */
+    }
+
+    .menu-Links a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #CF7878;
+        transition: color 0.3s ease;
+    }
+
+    .menu-Links a:hover {
+        color: #854a4a;
+    }
+}
+
+    .sectionpic {
+        width: auto;
+        height: 500px;
+    }
+    .sectionpic2 {
+        width: auto;
+        height: auto;
+    }
+    .aboutpic {
+        width: auto;
+        height: 500px;
+    }
     .sectiontextp1 {
         font-size: 1.5rem;
     }
@@ -22,9 +127,13 @@
         font-size: 2rem;
     }
 
-    .btn {
-        width: 15rem;
-        padding: 1rem;
+    .btn-container {
+        width: 40rem;
+        padding: 2rem;
+    }
+    .btn-container2 {
+        width: 40rem;
+        padding: 2rem;
     }
     #porto {
         flex-direction: column;
@@ -48,14 +157,29 @@
     .article-text {
         text-align: center;
     }
+    .aboutdetails{
+        text-align: justify;
+    }
     .article {
         display: flex;
         flex-direction: column;
         gap: 1rem;
         
     }
-    .article-image1, .article-image2, .article-image3, .article-image4 {
+    .article-image1, .article-image2, .article-image3, .article-image6, .article-image7, .article-image8 {
         width: 350px;
         height: 350px;
+    }
+    .article-textshow {
+        width: 150%; 
+        padding-left: 1rem; 
+    }
+
+    .description-section {
+        font-size: 1.5rem; 
+    }
+    .btn {
+        width: 80%; 
+        margin: 0 auto; 
     }
 }
