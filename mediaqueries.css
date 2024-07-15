@@ -1,219 +1,226 @@
 @media screen and (max-width: 1200px) {
- 
-    #desktop-nav {
-        display: none;
-    }
+  #desktop-nav {
+    display: none;
+  }
 
-    #hamburger-nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #FEDCDC;
-        padding: 10px 20px; 
-    }
+  #hamburger-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fedcdc;
+  }
+  .logo {
+    font-size: 6rem;
+    color: #854a4a;
+    font-weight: 600;
+    cursor: pointer;
+    padding-left: 20%;
+  }
 
-    .nav-links {
-        display: none;
-    }
+  .nav-links {
+    display: none;
+  }
 
-    .hamburger-menu {
-        display: flex;
-        align-items: center;
-    }
+  .hamburger-menu {
+    display: flex;
+    align-items: center;
+    padding-right: 20%;
+  }
 
-    .hamburger-icon {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 40px;
-        width: 40px;
-        cursor: pointer;
-        padding: 5px;
-        box-sizing: border-box;
-        position: relative;
-    }
+  .hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 6rem;
+    width: 5rem;
+    cursor: pointer;
+    padding: 5px;
+    box-sizing: border-box;
+    position: relative;
+  }
 
-    .hamburger-icon span {
-        display: block;
-        height: 2px;
-        width: 25px;
-        background-color: #CF7878;
-        margin: 4px 0;
-        transition: transform 0.3s ease-in-out;
-        -webkit-transition: transform 0.3s ease-in-out;
-        -moz-transition: transform 0.3s ease-in-out;
-        -ms-transition: transform 0.3s ease-in-out;
-        -o-transition: transform 0.3s ease-in-out;
-}
+  .hamburger-icon span {
+    display: block;
+    height: 4rem;
+    width: 5rem;
+    background-color: #cf7878;
+    margin: 0.5rem 0;
+    transition: transform 0.3s ease-in-out;
+    -webkit-transition: transform 0.3s ease-in-out;
+    -moz-transition: transform 0.3s ease-in-out;
+    -ms-transition: transform 0.3s ease-in-out;
+    -o-transition: transform 0.3s ease-in-out;
+  }
 
-    .hamburger-icon.open span:first-child {
-        transform: rotate(45deg) translate(5px, 5px);
-        -webkit-transform: rotate(45deg) translate(5px, 5px);
-        -moz-transform: rotate(45deg) translate(5px, 5px);
-        -ms-transform: rotate(45deg) translate(5px, 5px);
-        -o-transform: rotate(45deg) translate(5px, 5px);
-}
+  .hamburger-icon.open span:first-child {
+    transform: rotate(45deg) translate(-35px, 5px);
+    -webkit-transform: rotate(45deg) translate(-35px, 5px);
+    -moz-transform: rotate(45deg) translate(-35px, 5px);
+    -ms-transform: rotate(45deg) translate(-35px, 5px);
+    -o-transform: rotate(45deg) translate(-35px, 5px);
+  }
 
-    .hamburger-icon.open span:nth-child(2) {
-        opacity: 0;
-    }
+  .hamburger-icon.open span:nth-child(2) {
+    opacity: 0;
+  }
 
-    .hamburger-icon.open span:last-child {
-        transform: rotate(-45deg) translate(5px, -5px);
-        -webkit-transform: rotate(-45deg) translate(5px, -5px);
-        -moz-transform: rotate(-45deg) translate(5px, -5px);
-        -ms-transform: rotate(-45deg) translate(5px, -5px);
-        -o-transform: rotate(-45deg) translate(5px, -5px);
-}
+  .hamburger-icon.open span:last-child {
+    transform: rotate(-45deg) translate(35px, -75px);
+    -webkit-transform: rotate(-45deg) translate(35px, -75px);
+    -moz-transform: rotate(-45deg) translate(35px, -75px);
+    -ms-transform: rotate(-45deg) translate(35px, -75px);
+    -o-transform: rotate(-45deg) translate(35px, -75px);
+  }
 
-    .menu-links {
-        position: absolute;
-        top: 60px;
-        background-color: #FEDCDC;
-        width: fit-content;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-in-out;
-        -webkit-transition: max-height 0.3s ease-in-out;
-        -moz-transition: max-height 0.3s ease-in-out;
-        -ms-transition: max-height 0.3s ease-in-out;
-        -o-transition: max-height 0.3s ease-in-out;
-}
+  .menu-links {
+    position: absolute;
+    top: 100%;
+    right: 50%;
+    background-color: #fedcdc;
+    width: fit-content;
+    max-height: fit-content;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+  }
 
-    .menu-links.open {
-        max-height: 200px; 
-    }
-    
-    .menu-links ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        text-align: center;
-    }
+  .menu-links.open {
+    max-height: 200px;
+  }
 
-    .menu-links ul li {
-        margin-bottom: 10px; 
-    }
+  .menu-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
 
-    .menu-Links a {
-        display: block;
-        padding: 10px;
-        text-decoration: none;
-        color: #CF7878;
-        transition: color 0.3s ease;
-    }
+  .menu-links ul li {
+    margin-bottom: 10px;
+  }
 
-    .menu-Links a:hover {
-        color: #854a4a;
-    }
+  .menu-links a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #cf7878;
+    transition: color 0.3s ease;
+  }
 
-    .sectionpic {
-        width: auto;
-        height: 500px;
-    }
-    .sectionpic2 {
-        width: auto;
-        height: auto;
-    }
-    .aboutpic {
-        width: auto;
-        height: 500px;
-    }
-    .sectiontextp1 {
-        font-size: 1.5rem;
-    }
+  .menu-links a:hover {
+    color: #854a4a;
+  }
 
-    .sectiontextp2 {
-        font-size: 1.5rem;
-    }
+  .sectionpic {
+    width: auto;
+    height: 500px;
+  }
+  .sectionpic2 {
+    width: auto;
+    height: auto;
+  }
+  .aboutpic {
+    width: auto;
+    height: 500px;
+  }
+  .sectiontextp1 {
+    font-size: 1.5rem;
+  }
 
-    .tittle {
-        font-size: 2rem;
-    }
+  .sectiontextp2 {
+    font-size: 1.5rem;
+  }
 
-    .btn-container {
-        width: 40rem;
-        padding: 2rem;
-    }
-    .btn-container2 {
-        width: 40rem;
-        padding: 2rem;
-    }
-    #porto {
-        flex-direction: column;
-        text-align: center;
-    }
-    .portotext {
-        text-align: center;
-    }
-    #section {
-        margin: 0 2rem;
-    }
+  .tittle {
+    font-size: 2rem;
+  }
 
-    .section-container {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    #articles {
-        flex-direction: column;
-        text-align: center;
-        padding: 2rem;
-    }
+  .btn-container {
+    width: 40rem;
+    padding: 2rem;
+  }
+  .btn-container2 {
+    width: 40rem;
+    padding: 2rem;
+  }
+  #porto {
+    flex-direction: column;
+    text-align: center;
+  }
+  .portotext {
+    text-align: center;
+  }
+  #section {
+    margin: 0 2rem;
+  }
 
-    .article-text p{
-        text-align: center;
-        font-size: 1.5rem;
-    }
+  .section-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  #articles {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
 
-    .article-text h2 {
-        font-size: 2rem;
-    }
+  .article-text p {
+    text-align: center;
+    font-size: 1.5rem;
+  }
 
-    .article {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem; 
-    }
+  .article-text h2 {
+    font-size: 2rem;
+  }
 
-    .article-image1,
-    .article-image2,
-    .article-image3,
-    .article-image6,
-    .article-image7,
-    .article-image8 {
-        width: 100%;
-        height: 300px;
-        padding-top: 2rem;
-}
+  .article {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
 
-    #showcase {
-        flex-direction: column;
-        padding: 5rem;
-    }
+  .article-image1,
+  .article-image2,
+  .article-image3,
+  .article-image6,
+  .article-image7,
+  .article-image8 {
+    width: 100%;
+    height: 300px;
+    padding-top: 2rem;
+  }
 
-    .article-textshow {
-        width: 100%;
-    }
+  #showcase {
+    flex-direction: column;
+    padding: 5rem;
+  }
 
-    #showcase-img {
-        width: auto;
-        height: 600px;
-    }
+  .article-textshow {
+    width: 100%;
+  }
 
-    #showcase-title {
-        font-size: 2.5rem;
-    }
- #showcase {
-        padding: 2rem;
-    }
+  #showcase-img {
+    width: auto;
+    height: 600px;
+  }
 
-    #showcase-title {
-        font-size: 2rem;
-    }
+  #showcase-title {
+    font-size: 2.5rem;
+  }
+  #showcase {
+    padding: 2rem;
+  }
 
-    .btn {
-        width: 100%;
-    }
+  #showcase-title {
+    font-size: 2rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
 }

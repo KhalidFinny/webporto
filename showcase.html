@@ -26,7 +26,7 @@
             </div>
             <div class="menu-links">
                 <ul>
-                    <li><a href="#About" onclick="href='./Main.html'">About Me</a></li>
+                    <li><a href="#About" onclick="href='./index.html'">About Me</a></li>
                     <li><a href="#My Work" onclick="href='./work.html'">My Work</a></li>
                 </ul>
             </div>
@@ -123,15 +123,36 @@
                     lukisan tersebut beraliran naturalisme yang menggambarkan petani Indonesia sedang panen padi.
                 `
             },
+            'painting8': {
+                'img': './Assets/gambar8-1.jpeg',
+                'title': 'KASIH IBU',
+                'size': '40 x 50',
+                'media': 'Oil on canvas',
+                'year': '2023',
+                'details': `
+                    Lukisan dengan judul " Kasih Ibu" ini merupakan ekspresi saya terhadap pengalaman masa lalu. Seperti yang sudah ada di atas kanvas yaitu objek seorang ibu dan anaknya. Tampak seorang ibu sedang menyuapi makanan kepada anaknya.Tidak pernah ada keluh kesah dari seorang ibu selama merawat dan membesarkan anaknya. Kasih sayang yang diberikan kepada anak anaknya akan terus mengalir sepanjang masa.
+                `
+            },
+            'painting9': {
+                'img': './Assets/gambar9-1.jpeg',
+                'title': 'PANEN',
+                'size': '100 x 80',
+                'media': 'Oil on canvas',
+                'year': '2021',
+                'details': `
+                    lukisan tersebut beraliran naturalisme yang menggambarkan petani Indonesia sedang panen padi.
+                `
+            },
         };
-
+    
         function getQueryParam(param) {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(param);
         }
-
+    
         function loadPainting() {
             const paintingId = getQueryParam('painting');
+            console.log(`Painting ID: ${paintingId}`); // Debug log
             const painting = paintings[paintingId];
             if (painting) {
                 document.getElementById('showcase-img').src = painting.img;
@@ -140,10 +161,13 @@
                 document.getElementById('painting-media').textContent = painting.media;
                 document.getElementById('painting-year').textContent = painting.year;
                 document.getElementById('painting-details').innerHTML = painting.details;
+            } else {
+                console.error(`Painting with ID ${paintingId} not found`); // Error log
             }
         }
-
+    
         window.onload = loadPainting;
+
         function toggleMenu() {
             document.querySelector('.hamburger-icon').classList.toggle('open');
             document.querySelector('.menu-links').classList.toggle('open');
