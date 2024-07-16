@@ -65,12 +65,10 @@ a:hover {
 #hamburger-nav {
     display: none;
 }
-
 .hamburger-menu {
     position: relative;
     display: inline-block;
 }
-
 .hamburger-icon {
     display: flex;
     flex-direction: column;
@@ -83,58 +81,46 @@ a:hover {
     box-sizing: border-box;
     position: relative;
 }
-
 .hamburger-icon span {
     height: 4px;
     width: 100%;
     background-color: #CF7878;
     transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-}
-
-.menu-links {
-    position: absolute;
-    top: 100%;
-    right: 50%;
-    background-color: #FEDCDC;
-    width: fit-content;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
 }
 
 .menu-links.open {
-    max-height: 300px;
+    max-height: 300px; 
 }
-
 .menu-links ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
 }
-
 .menu-links ul li {
-    list-style: none;
+    margin-bottom: 10px; 
 }
-
-.menu-links ul li a {
+.menu-Links a {
     display: block;
     padding: 10px 20px;
-    text-align: center;
     font-size: 3rem;
-    color: #CF7878;
     text-decoration: none;
-    transition: all 0.3s ease-in-out;
-    white-space: nowrap;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
+    color: #CF7878;
+    transition: color 0.3s ease;
+    -webkit-transition: color 0.3s ease;
+    -moz-transition: color 0.3s ease;
+    -ms-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
 }
-
+.menu-Links a:hover {
+    color: #854a4a;
+}
 .hamburger-icon.open span:first-child {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(7.5px, 7.5px);
+    -webkit-transform: rotate(45deg) translate(7.5px, 7.5px);
+    -moz-transform: rotate(45deg) translate(7.5px, 7.5px);
+    -ms-transform: rotate(45deg) translate(7.5px, 7.5px);
+    -o-transform: rotate(45deg) translate(7.5px, 7.5px);
 }
 
 .hamburger-icon.open span:nth-child(2) {
@@ -142,7 +128,11 @@ a:hover {
 }
 
 .hamburger-icon.open span:last-child {
-    transform: rotate(-45deg) translate(5px, -5px);
+    transform: rotate(-45deg) translate(10px, -10px);
+    -webkit-transform: rotate(-45deg) translate(10px, -10px);
+    -moz-transform: rotate(-45deg) translate(10px, -10px);
+    -ms-transform: rotate(-45deg) translate(10px, -10px);
+    -o-transform: rotate(-45deg) translate(10px, -10px);
 }
 
 #articles {
