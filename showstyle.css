@@ -63,55 +63,6 @@ a:hover {
     cursor: pointer;
     padding-left: 20%;
 }
-#hamburger-nav {
-    display: none;
-}
-
-.hamburger-menu {
-    position: relative;
-    display: inline-block;
-}
-
-.hamburger-icon {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 40px;
-    width: 40px;
-    cursor: pointer;
-    padding: 5px;
-    box-sizing: border-box;
-    position: relative;
-}
-
-.hamburger-icon span {
-    height: 4px;
-    width: 100%;
-    background-color: #CF7878;
-    transition: all 0.3s ease-in-out;
-}
-
-.hamburger-icon.open span:first-child {
-    transform: rotate(45deg) translate(7.5px, 7.5px);
-    -webkit-transform: rotate(45deg) translate(7.5px, 7.5px);
-    -moz-transform: rotate(45deg) translate(7.5px, 7.5px);
-    -ms-transform: rotate(45deg) translate(7.5px, 7.5px);
-    -o-transform: rotate(45deg) translate(7.5px, 7.5px);
-}
-
-.hamburger-icon.open span:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger-icon.open span:last-child {
-    transform: rotate(-45deg) translate(10px, -10px);
-    -webkit-transform: rotate(-45deg) translate(10px, -10px);
-    -moz-transform: rotate(-45deg) translate(10px, -10px);
-    -ms-transform: rotate(-45deg) translate(10px, -10px);
-    -o-transform: rotate(-45deg) translate(10px, -10px);
-}
-
 
 #showcase {
     display: flex;

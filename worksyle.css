@@ -88,30 +88,6 @@ a:hover {
     transition: all 0.3s ease-in-out;
 }
 
-.menu-links.open {
-    max-height: 300px; 
-}
-.menu-links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-}
-.menu-links ul li {
-    margin-bottom: 10px; 
-}
-.menu-Links a {
-    display: block;
-    padding: 10px 20px;
-    font-size: 3rem;
-    text-decoration: none;
-    color: #CF7878;
-    transition: color 0.3s ease;
-    -webkit-transition: color 0.3s ease;
-    -moz-transition: color 0.3s ease;
-    -ms-transition: color 0.3s ease;
-    -o-transition: color 0.3s ease;
-}
 .menu-Links a:hover {
     color: #854a4a;
 }
