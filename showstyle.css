@@ -240,3 +240,56 @@ a:hover {
 .btn-color-2:hover {
     background-color: #854a4a;
 }
+#showcase2 {
+    display: flex;
+    flex-direction: column; 
+    gap: 2rem;
+    padding: 10rem;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.article-image2 {
+    background-color: #FEDCDC;
+}
+
+#showcase-img2 {
+    width: auto;
+    height: 800px;
+    overflow: hidden;
+    border: 5px solid #CF7878;
+}
+
+.article-textshow {
+    width: 100%;
+    text-align: justify;
+}
+
+#showcase-title {
+    color: #854a4a;
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-align: center; 
+}
+
+#showcase-description {
+    color: #854a4a;
+    line-height: 1.8;
+}
+
+.description-section {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+#showcase-description strong {
+    margin-bottom: 0.5rem;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem;
+}
