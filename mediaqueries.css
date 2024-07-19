@@ -109,8 +109,9 @@
 }
 
   .sectionpic {
+
     width: auto;
-    height: 500px;
+    height: 700px;
   }
   .sectionpic2 {
     width: auto;
@@ -121,15 +122,18 @@
     height: 500px;
   }
   .sectiontextp1 {
-    font-size: 3.6em;
+    font-size: 4em;
   }
 
   .sectiontextp2 {
+    font-size: 4rem;
+  }
+  .sectiontextp3 {
+    padding-top: 10%;
     font-size: 3rem;
   }
-
   .tittle {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
   }
   .aboutdetails{
     display: flex;
@@ -178,12 +182,16 @@
     padding: 1.5rem;
     height: 9rem;
     width: 37rem;
-    border-radius: 2rem;
+    border-radius: 5rem;
     transition: all 300ms ease;
-    -webkit-border-radius: 2rem;
-    -moz-border-radius: 2rem;
-    -ms-border-radius: 2rem;
-    -o-border-radius: 2rem;
+    -webkit-border-radius: 5rem;
+    -moz-border-radius: 5rem;
+    -ms-border-radius: 5rem;
+    -o-border-radius: 5rem;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
 }
 
 .btn-color-1,
@@ -212,7 +220,14 @@
     color: white;
 }
 
-.btn-container, .btn-container2 {
+.btn-container{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+} 
+
+.btn-container2 {
     display: flex;
     flex-direction: column;
     align-items: center;
