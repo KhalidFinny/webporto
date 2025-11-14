@@ -1,25 +1,65 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const sketches = [
+  { image: "/sketch/sketch-01.webp", title: "Sketch 01" },
+  { image: "/sketch/sketch-02.webp", title: "Sketch 02" },
+  { image: "/sketch/sketch-03.webp", title: "Sketch 03" },
+  { image: "/sketch/sketch-04.webp", title: "Sketch 04" },
+  { image: "/sketch/sketch-05.webp", title: "Sketch 05" },
+  { image: "/sketch/sketch-06.webp", title: "Sketch 06" },
+  { image: "/sketch/sketch-07.webp", title: "Sketch 07" },
+  { image: "/sketch/sketch-08.webp", title: "Sketch 08" },
+  { image: "/sketch/sketch-09.webp", title: "Sketch 09" },
+  { image: "/sketch/sketch-10.webp", title: "Sketch 10" },
+  { image: "/sketch/sketch-11.webp", title: "Sketch 11" },
+  { image: "/sketch/sketch-12.webp", title: "Sketch 12" },
+  { image: "/sketch/sketch-13.webp", title: "Sketch 13" },
+  { image: "/sketch/sketch-14.webp", title: "Sketch 14" },
+  { image: "/sketch/sketch-15.webp", title: "Sketch 15" },
+  { image: "/sketch/sketch-16.webp", title: "Sketch 16" }
+];
 ---
 
 <Layout title="Sketch" description="Sketchbook explorations and studies">
   <section class="min-h-screen px-4 sm:px-8 md:px-20 py-12 bg-transparent">
-    <div class="max-w-4xl">
+    <div class="max-w-4xl mb-12">
       <h1 class="text-4xl sm:text-5xl font-bold mb-6 tracking-tight">
         Sketch
       </h1>
-      <p class="text-lg md:text-2xl leading-relaxed">
-        Upcoming sketch studies and explorations will live here. Content will be added shortly.
+      <p class="text-lg md:text-2xl leading-relaxed text-gray-200">
+        Kumpulan studi cepat, eksplorasi bentuk, serta eksperimen goresan yang mengisi buku sketsa sehari-hari.
       </p>
     </div>
 
-    <div class="mt-10">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {sketches.map((sketch) => (
+        <figure class="group overflow-hidden rounded-2xl border border-dashed border-purple-400/60 bg-white/5 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+          <div class="relative aspect-square overflow-hidden">
+            <img
+              src={sketch.image}
+              alt={sketch.title}
+              loading="lazy"
+              class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+          </div>
+          <figcaption class="px-4 py-3">
+            <h3 class="text-base font-semibold tracking-tight text-white">
+              {sketch.title}
+            </h3>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+
+    <div class="mt-12">
       <a
         href="/#works"
         class="inline-flex items-center gap-2 rounded-full bg-blue-400 px-6 py-3 font-semibold text-white transition-transform duration-300 hover:scale-105"
       >
         <i class="fas fa-arrow-left"></i>
-        Back to Works
+        Kembali ke Works
       </a>
     </div>
   </section>

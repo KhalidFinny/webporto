@@ -1,25 +1,102 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const pencilOnPaper = [
+  {
+    image: "/pencilonpaper/whatsapp-image-2025-10-10-195615.webp",
+    title: "WhatsApp Study",
+    medium: "Graphite on Paper"
+  },
+  {
+    image: "/pencilonpaper/artblock.webp",
+    title: "Artblock",
+    medium: "Graphite on Paper"
+  },
+  {
+    image: "/pencilonpaper/commissioned-portrait.webp",
+    title: "Commissioned Portrait",
+    medium: "Graphite on Paper"
+  },
+  {
+    image: "/pencilonpaper/still-life-the-texture-of-calm.webp",
+    title: "Still Life: The Texture of Calm",
+    medium: "Graphite on Paper"
+  },
+  {
+    image: "/pencilonpaper/still-life-with-fruits.webp",
+    title: "Still Life with Fruits",
+    medium: "Graphite on Paper"
+  },
+  {
+    image: "/pencilonpaper/still-life-drawing.webp",
+    title: "Still Life Drawing",
+    medium: "Graphite on Paper"
+  },
+  {
+    image: "/pencilonpaper/a-friends-face.webp",
+    title: "A Friend's Face",
+    medium: "Graphite on Paper"
+  },
+  {
+    image: "/pencilonpaper/self-portrait.webp",
+    title: "Self Portrait",
+    medium: "Charcoal on Paper"
+  },
+  {
+    image: "/pencilonpaper/bargue-method.webp",
+    title: "Bargue Method Study",
+    medium: "Graphite on Paper"
+  },
+  {
+    image: "/pencilonpaper/pulang.webp",
+    title: "Pulang",
+    medium: "Graphite on Paper"
+  }
+];
 ---
 
-<Layout title="Pencil on Paper" description="Black and white pencil drawings">
+<Layout title="Pencil on Paper" description="Koleksi ilustrasi hitam putih dengan pensil di atas kertas">
   <section class="min-h-screen px-4 sm:px-8 md:px-20 py-12 bg-transparent">
-    <div class="max-w-4xl">
+    <div class="max-w-4xl mb-12">
       <h1 class="text-4xl sm:text-5xl font-bold mb-6 tracking-tight">
         Pencil on Paper (BnW)
       </h1>
-      <p class="text-lg md:text-2xl leading-relaxed">
-        A collection of monochrome pencil works will be presented here. Stay tuned for updates.
+      <p class="text-lg md:text-2xl leading-relaxed text-gray-200">
+        Eksplorasi nilai, tekstur, dan bentuk melalui goresan pensil. Kumpulan karya ini merekam proses observasi mendalam terhadap figur, benda, dan suasana.
       </p>
     </div>
 
-    <div class="mt-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {pencilOnPaper.map((drawing) => (
+        <figure class="group overflow-hidden rounded-3xl border-4 border-dashed border-blue-400/60 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+          <div class="relative aspect-[4/5] overflow-hidden">
+            <img
+              src={drawing.image}
+              alt={drawing.title}
+              loading="lazy"
+              class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/0 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+          </div>
+          <figcaption class="px-6 py-5">
+            <h3 class="text-xl font-bold tracking-tight text-white">
+              {drawing.title}
+            </h3>
+            <p class="mt-1 text-sm uppercase tracking-widest text-blue-200">
+              {drawing.medium}
+            </p>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+
+    <div class="mt-12">
       <a
         href="/#works"
         class="inline-flex items-center gap-2 rounded-full bg-blue-400 px-6 py-3 font-semibold text-white transition-transform duration-300 hover:scale-105"
       >
         <i class="fas fa-arrow-left"></i>
-        Back to Works
+        Kembali ke Works
       </a>
     </div>
   </section>
