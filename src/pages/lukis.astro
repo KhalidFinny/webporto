@@ -1,10 +1,23 @@
 ---
+import Layout from "../layouts/Layout.astro";
 import "../styles/animations.css";
 import "../styles/galery.css";
 import { paintings } from '../data/paintings.astro';
 ---
 
+<Layout title="My Gallery" description="Koleksi lukisan naturalist-realist" hideNav={true}>
 <section id="gallery" class="bg-transparent min-h-screen px-4 sm:px-8 md:px-20 py-12">
+  <!-- Back Button -->
+  <div class="mb-6">
+    <button
+      onclick="window.history.back()"
+      class="inline-flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors duration-200"
+    >
+      <i class="fas fa-arrow-left"></i>
+      <span class="font-medium">Kembali</span>
+    </button>
+  </div>
+  
   <!-- Scribble Header -->
   <h1 class="text-4xl sm:text-5xl font-bold mb-12 md:mb-16 tracking-tight animate-fadeIn">
     <span class="relative inline-block font-comic">
@@ -21,90 +34,39 @@ import { paintings } from '../data/paintings.astro';
     Step into my whimsical world of naturalist-realist paintings!
   </p>
 
-  <!-- Vertical Flow Gallery -->
+  <!-- Masonry Gallery -->
   <div class="gallery-container animate-slideInUp">
-    <!-- Feature Row - First two paintings with cartoon cards -->
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 md:gap-10 mb-10">
-      <div class="md:col-span-7 gallery-item">
-        <div class="card-wrapper">
-          <div class="card bg-white p-4 relative overflow-hidden rounded-lg transform transition-all duration-300 hover:rotate-2 hover:scale-105 border-4 border-dashed border-blue-400">
-            <svg class="absolute top-0 left-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
-              <path d="M10,10 Q30,5 50,15 T90,10" stroke="#FFD166" stroke-width="2" fill="none" 
-                class="animate-draw-slow" stroke-dasharray="200" stroke-dashoffset="200" />
-            </svg>
-            <div class="relative h-64 sm:h-72 md:h-96 overflow-hidden rounded-lg">
+    <div class="masonry-container">
+      {paintings.map((painting, index) => (
+        <div class="masonry-item">
+          <div class="card bg-white p-3 sm:p-4 relative overflow-hidden rounded-lg transform transition-all duration-300 hover:scale-105 hover:rotate-1 border-4 border-dashed"
+            style={`border-color: ${['#FF6B6B', '#06D6A0', '#118AB2', '#FFD166'][index % 4]}`}>
+            {(index % 3 === 0) && 
+              <svg class="absolute -top-4 -right-4 w-8 sm:w-10 h-8 sm:h-10 pointer-events-none" viewBox="0 0 100 100">
+                <path d="M80,20 Q60,40 80,60" stroke="#FF6B6B" stroke-width="2" fill="none" class="animate-draw-slow" />
+              </svg>
+            }
+            {(index % 4 === 0) && 
+              <svg class="absolute -bottom-4 -left-4 w-8 sm:w-12 h-8 sm:h-12 pointer-events-none" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="30" stroke="#06D6A0" stroke-width="2" fill="none" class="animate-draw-slow" />
+              </svg>
+            }
+            <div class="relative w-full overflow-hidden rounded-lg">
               <img 
-                src={paintings[0].image} 
-                alt={paintings[0].title} 
-                class="gallery-image object-cover w-full h-full z-10 relative cursor-pointer"
-                data-index="0"
+                src={painting.image} 
+                alt={painting.title} 
+                class="gallery-image object-cover w-full h-auto z-10 relative cursor-pointer"
+                data-index={index}
+                loading="lazy"
               />
-              <div class="absolute bottom-4 right-4 bg-white p-2 rounded-full shadow-md transform rotate-6">
+              <div class="absolute bottom-3 right-3 bg-white p-2 rounded-full shadow-md">
                 <i class="fas fa-expand text-blue-400"></i>
               </div>
             </div>
-            <h3 class="text-xl sm:text-2xl font-bold mt-4 font-comic transform -rotate-1">{paintings[0].title}</h3>
-          </div>
-        </div>
-      </div>
-      
-      <div class="md:col-span-5 gallery-item">
-        <div class="card-wrapper">
-          <div class="card bg-white p-4 relative overflow-hidden rounded-lg transform transition-all duration-300 hover:-rotate-2 hover:scale-105 border-4 border-dotted border-pink-400">
-            <svg class="absolute top-0 right-0 w-20 h-20 pointer-events-none" viewBox="0 0 100 100">
-              <path d="M80,20 Q60,40 80,60 T60,80" stroke="#06D6A0" stroke-width="3" fill="none" 
-                class="animate-draw-slow" stroke-dasharray="200" stroke-dashoffset="200" />
-            </svg>
-            <div class="relative h-64 sm:h-72 md:h-96 overflow-hidden rounded-lg">
-              <img 
-                src={paintings[1].image} 
-                alt={paintings[1].title} 
-                class="gallery-image object-cover w-full h-full z-10 relative cursor-pointer"
-                data-index="1"
-              />
-              <div class="absolute bottom-4 right-4 bg-white p-2 rounded-full shadow-md">
-                <i class="fas fa-expand text-blue-400"></i>
-              </div>
-            </div>
-            <h3 class="text-xl sm:text-2xl font-bold mt-4 font-comic transform rotate-1">{paintings[1].title}</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Main Gallery Grid - Remaining paintings -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-      {paintings.slice(2).map((painting, index) => (
-        <div class="gallery-item relative">
-          <div class="card-wrapper">
-            <div class="card bg-white p-3 sm:p-4 relative overflow-hidden rounded-lg transform transition-all duration-300 hover:scale-105 hover:rotate-2 border-4 border-dashed"
-              style={`border-color: ${['#FF6B6B', '#06D6A0', '#118AB2', '#FFD166'][index % 4]}`}>
-              {(index % 3 === 0) && 
-                <svg class="absolute -top-4 -right-4 w-8 sm:w-10 h-8 sm:h-10 pointer-events-none" viewBox="0 0 100 100">
-                  <path d="M80,20 Q60,40 80,60" stroke="#FF6B6B" stroke-width="2" fill="none" class="animate-draw-slow" />
-                </svg>
-              }
-              {(index % 4 === 0) && 
-                <svg class="absolute -bottom-4 -left-4 w-8 sm:w-12 h-8 sm:h-12 pointer-events-none" viewBox="0 0 100 100">
-                  <circle cx="50" cy="50" r="30" stroke="#06D6A0" stroke-width="2" fill="none" class="animate-draw-slow" />
-                </svg>
-              }
-              <div class="relative h-48 sm:h-56 md:h-72 overflow-hidden rounded-lg">
-                <img 
-                  src={painting.image} 
-                  alt={painting.title} 
-                  class="gallery-image object-cover w-full h-full z-10 relative cursor-pointer"
-                  data-index={index + 2}
-                />
-                <div class="absolute bottom-3 right-3 bg-white p-2 rounded-full shadow-md">
-                  <i class="fas fa-expand text-blue-400"></i>
-                </div>
-              </div>
-              <h3 class="text-lg sm:text-xl font-bold mt-3 font-comic" 
-                style={`transform: rotate(${(index % 2 === 0) ? '1deg' : '-1deg'}`}>
-                {painting.title}
-              </h3>
-            </div>
+            <h3 class="text-base sm:text-lg md:text-xl font-bold mt-3 font-comic text-gray-900" 
+              style={`transform: rotate(${(index % 2 === 0) ? '0.5deg' : '-0.5deg'}`}>
+              {painting.title}
+            </h3>
           </div>
         </div>
       ))}
@@ -222,3 +184,5 @@ import { paintings } from '../data/paintings.astro';
     });
   });
 </script>
+</section>
+</Layout>

@@ -1,103 +1,78 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-const colorOnPaper = [
-  {
-    image: "/coloronpaper/cherry.webp",
-    title: "Cherry",
-    medium: "Marker on Paper"
-  },
-  {
-    image: "/coloronpaper/jono-jessie.webp",
-    title: "Jono & Jessie",
-    medium: "Mixed Media on Paper"
-  },
-  {
-    image: "/coloronpaper/love.webp",
-    title: "Love",
-    medium: "Marker on Paper"
-  },
-  {
-    image: "/coloronpaper/janji-ya-jangan-menangis-lagi.webp",
-    title: "Janji Ya, Jangan Menangis Lagi",
-    medium: "Poster Color"
-  },
-  {
-    image: "/coloronpaper/sepatuku.webp",
-    title: "Sepatuku",
-    medium: "Watercolor on Paper"
-  },
-  {
-    image: "/coloronpaper/burger-2022.webp",
-    title: "Burger (2022)",
-    medium: "Gouache on Paper"
-  },
-  {
-    image: "/coloronpaper/pizza-2022.webp",
-    title: "Pizza (2022)",
-    medium: "Gouache on Paper"
-  },
-  {
-    image: "/coloronpaper/tea.webp",
-    title: "Tea",
-    medium: "Watercolor on Paper"
-  },
-  {
-    image: "/coloronpaper/blue-eyes.webp",
-    title: "Blue Eyes",
-    medium: "Pastel on Paper"
-  },
-  {
-    image: "/coloronpaper/sarapan.webp",
-    title: "Sarapan",
-    medium: "Marker on Paper"
-  }
-];
+import "../styles/animations.css";
+import "../styles/galery.css";
+import { colorOnPaper } from '../data/color-on-paper.astro';
 ---
 
-<Layout title="Color on Paper" description="Portofolio karya warna di atas kertas">
-  <section class="min-h-screen px-4 sm:px-8 md:px-20 py-12 bg-transparent">
-    <div class="max-w-4xl mb-12">
-      <h1 class="text-4xl sm:text-5xl font-bold mb-6 tracking-tight">
-        Color on Paper
-      </h1>
-      <p class="text-lg md:text-2xl leading-relaxed text-gray-200">
-        Koleksi ilustrasi warna dengan berbagai medium di atas kertas. Setiap karya merekam momen keseharian dengan karakter khas dan warna yang ekspresif.
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      {colorOnPaper.map((artwork) => (
-        <figure class="group overflow-hidden rounded-3xl border-4 border-dashed border-pink-400/60 bg-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
-          <div class="relative aspect-[4/5] overflow-hidden">
-            <img
-              src={artwork.image}
-              alt={artwork.title}
-              loading="lazy"
-              class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-          </div>
-          <figcaption class="px-6 py-5">
-            <h3 class="text-xl font-bold tracking-tight text-white">
-              {artwork.title}
-            </h3>
-            <p class="mt-1 text-sm uppercase tracking-widest text-pink-200">
-              {artwork.medium}
-            </p>
-          </figcaption>
-        </figure>
-      ))}
-    </div>
-
-    <div class="mt-12">
-      <a
-        href="/#works"
-        class="inline-flex items-center gap-2 rounded-full bg-blue-400 px-6 py-3 font-semibold text-white transition-transform duration-300 hover:scale-105"
+<Layout title="Color on Paper" description="Portofolio karya warna di atas kertas" hideNav={true}>
+  <section id="gallery" class="bg-transparent min-h-screen px-4 sm:px-8 md:px-20 py-12">
+    <!-- Back Button -->
+    <div class="mb-6">
+      <button
+        onclick="window.history.back()"
+        class="inline-flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors duration-200"
       >
         <i class="fas fa-arrow-left"></i>
-        Kembali ke Works
-      </a>
+        <span class="font-medium">Kembali</span>
+      </button>
+    </div>
+    
+    <!-- Scribble Header -->
+    <h1 class="text-4xl sm:text-5xl font-bold mb-12 md:mb-16 tracking-tight animate-fadeIn">
+      <span class="relative inline-block font-comic">
+        Color on Paper
+        <span class="absolute -bottom-2 xs:-bottom-3 left-0 w-full h-3 sm:h-4 bg-pink-400 z-0 opacity-30"></span>
+        <svg class="absolute -bottom-4 w-full" viewBox="0 0 200 15" preserveAspectRatio="none">
+          <path d="M0,5 Q25,15 50,5 T100,5 T150,5 T200,5" stroke="#FF6B6B" stroke-width="4" fill="none" 
+            class="animate-draw" stroke-linecap="round" stroke-dasharray="300" stroke-dashoffset="300" />
+        </svg>
+      </span>
+    </h1>
+    
+    <p class="text-lg md:text-2xl leading-relaxed max-w-3xl mb-12 font-comic animate-fadeIn">
+      Koleksi ilustrasi warna dengan berbagai medium di atas kertas. Setiap karya merekam momen keseharian dengan karakter khas dan warna yang ekspresif.
+    </p>
+
+    <!-- Masonry Gallery -->
+    <div class="gallery-container animate-slideInUp">
+      <div class="masonry-container">
+        {colorOnPaper.map((artwork, index) => (
+          <div class="masonry-item">
+            <div class="card bg-white p-3 sm:p-4 relative overflow-hidden rounded-lg transform transition-all duration-300 hover:scale-105 hover:rotate-1 border-4 border-dashed"
+              style={`border-color: ${['#FF6B6B', '#06D6A0', '#118AB2', '#FFD166'][index % 4]}`}>
+              {(index % 3 === 0) && 
+                <svg class="absolute -top-4 -right-4 w-8 sm:w-10 h-8 sm:h-10 pointer-events-none" viewBox="0 0 100 100">
+                  <path d="M80,20 Q60,40 80,60" stroke="#FF6B6B" stroke-width="2" fill="none" class="animate-draw-slow" />
+                </svg>
+              }
+              {(index % 4 === 0) && 
+                <svg class="absolute -bottom-4 -left-4 w-8 sm:w-12 h-8 sm:h-12 pointer-events-none" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="30" stroke="#06D6A0" stroke-width="2" fill="none" class="animate-draw-slow" />
+                </svg>
+              }
+              <div class="relative w-full overflow-hidden rounded-lg">
+                <img 
+                  src={artwork.image} 
+                  alt={artwork.title} 
+                  class="object-cover w-full h-auto z-10 relative"
+                  loading="lazy"
+                />
+                <div class="absolute bottom-3 right-3 bg-white p-2 rounded-full shadow-md">
+                  <i class="fas fa-expand text-blue-400"></i>
+                </div>
+              </div>
+              <h3 class="text-base sm:text-lg md:text-xl font-bold mt-3 font-comic text-gray-900" 
+                style={`transform: rotate(${(index % 2 === 0) ? '0.5deg' : '-0.5deg'}`}>
+                {artwork.title}
+              </h3>
+              <p class="text-xs sm:text-sm mt-1 font-comic text-gray-600">
+                {artwork.medium}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 </Layout>
